@@ -343,3 +343,126 @@ nav a {
     font-size: 0.85rem;
 }
 
+/***Project section styling***/
+.project-showcase {
+    position: relative;
+    max-width: 900px;
+    margin-inline: auto;
+}
+
+.project-card-stack {
+    position: relative;
+    min-height: 520px;
+}
+
+.project-card {
+    position: absolute;
+    inset: 0;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 520px;
+    overflow: hidden;
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background-color: var(--color-surface);
+
+    transition:
+        transform 400ms ease,
+        opacity 400ms ease;
+}
+
+.project-card.is-active {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    z-index: 3;
+}
+
+.project-card.is-next {
+    transform: translateX(8%) scale(0.96);
+    opacity: 0.65;
+    z-index: 2;
+}
+
+.project-card.is-far-next {
+    transform: translateX(14%) scale(0.92);
+    opacity: 0.25;
+    z-index: 1;
+}
+
+.project-image {
+    min-height: 100%;
+    overflow: hidden;
+    background-color: var(--color-background);
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--space-xl);
+}
+
+.project-type {
+    margin-bottom: var(--space-sm);
+    color: var(--color-accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.project-content h3 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.project-content > p:not(.project-type) {
+    max-width: 500px;
+    margin-top: var(--space-md);
+    color: var(--color-muted);
+    line-height: 1.7;
+}
+
+.project-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: var(--space-lg);
+}
+
+.project-technologies li {
+    padding: 0.4rem 0.65rem;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    color: var(--color-muted);
+    font-size: 0.75rem;
+}
+
+.project-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    margin-top: var(--space-xl);
+}
+
+.project-github {
+    color: var(--color-muted);
+    font-size: 0.9rem;
+}
+
+.project-github:hover {
+    color: var(--color-text);
+}
+
+
+
