@@ -72,6 +72,20 @@ ul {
     --color-footer-border: #4A3F3A;
 }
 
+[data-theme="dark"] {
+    --color-background: #1D1816;
+    --color-surface: #27211E;
+    --color-text: #F8F5F0;
+    --color-muted: #B9ADA7;
+    --color-accent: #C18C82;
+    --color-border: #4A3F3A;
+
+    --color-footer: #15110F;
+    --color-footer-text: #F8F5F0;
+    --color-footer-muted: #B9ADA7;
+    --color-footer-border: #3A302C;
+}
+
 body {
     background-color: var(--color-background);
     color: var(--color-text);
