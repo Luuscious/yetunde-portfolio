@@ -65,6 +65,11 @@ ul {
     --radius-lg: 1.5rem;
 
     --container-width: 1200px;
+
+    --color-footer: #2B2421;
+    --color-footer-text: #F8F5F0;
+    --color-footer-muted: #B9ADA7;
+    --color-footer-border: #4A3F3A;
 }
 
 body {
@@ -678,7 +683,8 @@ nav a {
 
 .site-footer {
     margin-top: var(--space-2xl);
-
+    background-color: var(--color-footer);
+    color: var(--color-footer-text);
     border-top: 1px solid var(--color-border);
 }
 
@@ -703,18 +709,19 @@ nav a {
     font-family: var(--font-heading);
     font-size: 1.5rem;
     font-weight: 400;
+    color: var(--color-footer-text);
 }
 
 .footer-brand p {
     margin-top: var(--space-sm);
-
+    color: var(--color-footer-muted);
     color: var(--color-muted);
     line-height: 1.6;
 }
 
 .footer-column h3 {
     margin-bottom: var(--space-md);
-
+    color: var(--color-footer-text);
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.12em;
@@ -729,12 +736,13 @@ nav a {
 .footer-column a {
     color: var(--color-muted);
     font-size: 0.85rem;
-
+    color: var(--color-footer-muted);
     transition: color 200ms ease;
 }
 
 .footer-column a:hover {
     color: var(--color-text);
+    color: var(--color-footer-text);
 }
 
 .footer-bottom {
@@ -744,11 +752,64 @@ nav a {
     gap: var(--space-md);
 
     padding-block: var(--space-md);
-
+    border-top: 1px solid var(--color-footer-border);
+    color: var(--color-footer-muted);
     border-top: 1px solid var(--color-border);
 
     color: var(--color-muted);
     font-size: 0.8rem;
+}
+
+
+/**Responsive rules***/
+@media (max-width: 900px) {
+
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card:last-child {
+        grid-column: auto;
+    }
+
+    .service-card {
+        min-height: 280px;
+        padding: var(--space-lg);
+    }
+
+    .contact-form {
+        padding: var(--space-lg);
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+
+    .footer-brand {
+        grid-column: auto;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 
 
