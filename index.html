@@ -143,7 +143,7 @@
 
             <div class="project-showcase">
                 <div class="project-card-stack">
-                    <article class="project-card is-active">
+                    <article class="project-card">
                         <div class="project-image">
                             <img src="assets/images/craps-game.png" alt="screenshot of the Craps Game Application">
                         </div>
@@ -163,7 +163,7 @@
                         </div>
                     </article>
 
-                    <article class="project-card is-next">
+                    <article class="project-card">
                         <div class="project-image">
                             <img src="assets/images/text-analysis-tool.png" alt="screenshot of the Text Analysis Tool">
                         </div>
@@ -181,7 +181,7 @@
                             </div>
                         </div>
                     </article>
-                    <article class="project-card is-far-next">
+                    <article class="project-card">
                         <div class="project-image">
                             <img src="assets/images/esims.png" alt="screenshot of the ESIMS Incident Reporting Application">
                         </div>
@@ -204,14 +204,29 @@
                     </article>
                 </div>
 
-                <div class="project-navigation" aria-label="Project navigation">
-                    <button type="button" class="project-control project-prev" aria-label="Previous project">←</button>
-                    <span class="project-counter">
-                        <span id="current-project">1</span>
-                        /
-                        <span id="total-projects">3</span>
+                <div class="project-controls">
+                    <button
+                        type="button"
+                        class="project-control"
+                        id="project-previous"
+                        aria-label="View previous project">
+                        ← Previous
+                    </button>
+
+                    <span
+                        class="project-counter"
+                        id="project-counter"
+                        aria-live="polite">
+                        1 / 3
                     </span>
-                    <button type="button" class="project-control project-next" aria-label="Next project">→</button>
+
+                    <button
+                        type="button"
+                        class="project-control"
+                        id="project-next"
+                        aria-label="View next project">
+                        Next →
+                    </button>
                 </div>
             </div>
         </section>

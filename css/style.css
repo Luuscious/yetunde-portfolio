@@ -376,6 +376,8 @@ nav a {
 .project-card-stack {
     position: relative;
     min-height: 520px;
+    overflow: hidden;
+    touch-action: pan-y;
 }
 
 .project-card {
@@ -394,12 +396,16 @@ nav a {
     transition:
         transform 400ms ease,
         opacity 400ms ease;
+
+    user-select: none;
+    cursor: grab;
 }
 
 .project-card.is-active {
     transform: translateX(0) scale(1);
     opacity: 1;
     z-index: 3;
+    cursor: grabbing;
 }
 
 .project-card.is-next {
@@ -1047,6 +1053,18 @@ nav a {
         min-height: 700px;
     }
 
+    .project-controls {
+    gap: var(--space-sm);
+    }
+
+    .project-control {
+        flex: 1;
+    }
+
+    .project-counter {
+        flex-shrink: 0;
+    }
+
 
     /* Services */
 
@@ -1173,6 +1191,15 @@ nav a {
         margin-top: var(--space-lg);
     }
 
+    .project-controls {
+        gap: 0.5rem;
+    }
+
+    .project-control {
+        padding-inline: 0.75rem;
+        font-size: 0.8rem;
+    }
+
 
     /* Services */
 
@@ -1211,4 +1238,42 @@ nav a {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
     }
+}
+
+.project-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+}
+
+.project-control {
+    min-height: 2.75rem;
+    padding: 0.65rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background-color: transparent;
+    color: var(--color-text);
+    cursor: pointer;
+    transition:
+        background-color 200ms ease,
+        color 200ms ease,
+        border-color 200ms ease;
+}
+
+.project-control:hover:not(:disabled) {
+    background-color: var(--color-surface);
+    border-color: var(--color-accent);
+}
+
+.project-control:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.project-counter {
+    color: var(--color-muted);
+    font-size: 0.85rem;
+    font-variant-numeric: tabular-nums;
 }
